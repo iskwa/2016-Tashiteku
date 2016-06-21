@@ -13,5 +13,5 @@ server.on('requrest', function(req, res) {
         res.end();
     });
 });
-server.listen(8080);
+server.listen(8000);
 console.log('server listening ...');
