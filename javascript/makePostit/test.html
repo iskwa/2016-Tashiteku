@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang ="ja">
 	<head>
-	<mata charset="SHIFT-JIS" />
-	<title>javascript_no4</title>
-
-	<script language = "javascript">
-	<!--
-	
-	function keep(){
-	keepStr = document.in_form.text.value ;
-	document.out_form.text_keep.value = keepStr ;
-	}
-
-	function problem(){
-	problemStr = document.in_form.text.value ;
-	document.out_form.text_problem.value = problemStr ;
-	} 
-	function try(){
-	tryStr = document.in_form.text.value ;
-	document.out_form.text_try.value = tryStr ;
-	}
-	
-	//-->
-</script>
+		<mata charset="SHIFT-JIS">
+		<title>javascript_no4</title>
 	</head>
+
+	<script language="javascript" type="text/javascript">
+	<!--
+	function keep(){
+		keepStr = document.in_form.text.value ;
+		document.out_form.text_keep.value = keepStr ;
+	}
+	function problem(){
+		problemStr = document.in_form.text.value ;
+		document.out_form.text_problem.value = problemStr ;
+	}
+	function challenge(){
+		tryStr = document.in_form.text.value ;
+		document.out_form.text_try.value = tryStr ;
+	}
+	-->
+	</script>
+
 	<body>
 		<form name="in_form">
-		“ü—Í„<input type=text name="text" value="">
-		<input type=button value="keep" onClick="keep()">
-		<input type=button value="problem" onClick="problem()">
-		<input type=button value="try" onClick="try()">
+			“ü—Í„<input type="text" name="text" value="" />
+			<input type="button" value="keep" onClick="keep()" />
+			<input type="button" value="problem" onClick="problem()" />
+			<input type="button" value="try" onClick="challenge()" />
 		</form>
-
 		<form name="out_form">
-		keep:<input type=text name="text_keep" value=""><br>
-		problem:<input type=text name="text_problem" value=""><br>
-		try:<input type=text name="text_try" value="">
-
+			keep:<input type="text" name="text_keep" value="" /><br>
+			problem:<input type="text" name="text_problem" value="" /><br>
+			try:<input type="text" name="text_try" value="" />
 		</form>
-
 	</body>
 </html>
-
