@@ -3,6 +3,7 @@
 	<head>
 		<mata charset="SHIFT-JIS">
 		<title>javascript_no4</title>
+		<link rel="stylesheet" type="text/css" href="table.css" />
 	</head>
 
 	<script language="javascript" type="text/javascript">
@@ -10,14 +11,17 @@
 	function keep(){
 		keepStr = document.in_form.text.value ;
 		document.out_form.text_keep.value = keepStr ;
+		document.in_form.text.value = null ;
 	}
 	function problem(){
 		problemStr = document.in_form.text.value ;
 		document.out_form.text_problem.value = problemStr ;
+		document.in_form.text.value = null ;
 	}
 	function challenge(){
 		tryStr = document.in_form.text.value ;
 		document.out_form.text_try.value = tryStr ;
+		document.in_form.text.value = null ;
 	}
 	-->
 	</script>
@@ -34,5 +38,28 @@
 			problem:<input type="text" name="text_problem" value="" /><br>
 			try:<input type="text" name="text_try" value="" />
 		</form>
+
+		<br>
+
+		<table class="table-data">
+			<thead>
+				<tr>
+					<td colspan = "3">K.P.T</td>
+				</tr>
+			</tdead>
+			<tbody>
+				<tr>
+					<th>Keep</th>
+					<th>Problem</th>
+					<th>Try</th>
+				</tr>
+				<tr>
+					<th>‚±‚±‚É</th>
+					<th>•tâ³‚ð</th>
+					<th>’u‚±‚¤</th>
+				</tr>
+			</tbody>
+		</table>
 	</body>
+
 </html>
