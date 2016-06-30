@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>javascript_no4</title>
     <link rel="stylesheet" type="text/css" href="table.css" />
+    <script src="/socket.io/socket.io.js"></script>
   </head>
 
   <body>
@@ -24,6 +25,13 @@ function challenge(){
   document.out_form.text_try.value = tryStr ;
   document.in_form.text.value = null ;
 }
+
+var socketio = io.connect("http://localhost:8080");
+function send(){
+  // sendStr = document.in_form.text.value;
+  sendStr = "sample";
+  socketio.emit("publish", { value : sendStr });
+}
 -->
     </script>
 
@@ -32,6 +40,7 @@ function challenge(){
       <input type="button" value="keep" onClick="keep()" />
       <input type="button" value="problem" onClick="problem()" />
       <input type="button" value="try" onClick="challenge()" />
+      <input type="button" value="send" onclick="send()" />
     </form>
     <form name="out_form">
       keep:<input type="text" name="text_keep" value="" /><br>
