@@ -21,7 +21,7 @@ io.sockets.on("connection", function (socket) {
 
   // function for the event of receiving message
   socket.on("publish", function (data) {
-    console.log("publish");
+    console.log( data.value );
     // io.sockets.emit('messeage', { value: data.value }
   });
 

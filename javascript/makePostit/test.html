@@ -28,8 +28,7 @@ function challenge(){
 
 var socketio = io.connect("http://localhost:8080");
 function send(){
-  // sendStr = document.in_form.text.value;
-  sendStr = "sample";
+  sendStr = document.in_form.text.value;
   socketio.emit("publish", { value : sendStr });
 }
 -->
