@@ -10,29 +10,11 @@
   <body>
     <script language="javascript" type="text/javascript">
 <!--
-function keep(){
-  keepStr = document.in_form.text.value ;
-  element = document.getElementById("keep");
+function addPostIt(tagId) {
+  content = document.in_form.text.value ;
+  element = document.getElementById(tagId);
   child = document.createElement("div");
-  text = document.createTextNode(keepStr);
-  child.appendChild(text);
-  element.appendChild(child);
-  document.in_form.text.value = null ;
-}
-function problem(){
-  problemStr = document.in_form.text.value ;
-  element = document.getElementById("problem");
-  child = document.createElement("div");
-  text = document.createTextNode(problemStr);
-  child.appendChild(text);
-  element.appendChild(child);
-  document.in_form.text.value = null ;
-}
-function challenge(){
-  tryStr = document.in_form.text.value;
-  element = document.getElementById("try");
-  child = document.createElement("div");
-  text = document.createTextNode(tryStr);
+  text = document.createTextNode(content);
   child.appendChild(text);
   element.appendChild(child);
   document.in_form.text.value = null ;
@@ -48,9 +30,9 @@ function send(){
 
     <form name="in_form">
       入力＞<input type="text" name="text" value="" />
-      <input type="button" value="keep" onClick="keep()" />
-      <input type="button" value="problem" onClick="problem()" />
-      <input type="button" value="try" onClick="challenge()" />
+      <input type="button" value="keep" onClick="addPostIt('keep')" />
+      <input type="button" value="problem" onClick="addPostIt('problem')" />
+      <input type="button" value="try" onClick="addPostIt('try')" />
       <input type="button" value="send" onclick="send()" />
     </form>
 
