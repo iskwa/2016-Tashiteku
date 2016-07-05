@@ -1,0 +1,30 @@
+//p {color:blue;}
+
+#sakitabox {
+    width:250px;
+    height:50px;
+    background-color:#fff000;
+    position: relative;
+}
+#sakitabox:after {
+    width:200px;
+    height:45px;
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 3px;
+    -webkit-box-shadow: 0 5px 5px #555 ;
+    -moz-box-shadow: 0 5px 5px #555 ;
+    box-shadow: 0 5px 5px #555 ;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+    z-index: -1; /* èdÇ»ÇËèáÇîwñ Ç÷ */
+}
+
+
+
+1:0.8
+1:0.9

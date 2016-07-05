@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>javascript_no4</title>
+    <title>kpt-js</title>
     <link rel="stylesheet" type="text/css" href="table.css" />
     <script src="/socket.io/socket.io.js"></script>
   </head>
@@ -10,19 +10,13 @@
   <body>
     <script language="javascript" type="text/javascript">
 <!--
-function keep(){
-  keepStr = document.in_form.text.value ;
-  document.out_form.text_keep.value = keepStr ;
-  document.in_form.text.value = null ;
-}
-function problem(){
-  problemStr = document.in_form.text.value ;
-  document.out_form.text_problem.value = problemStr ;
-  document.in_form.text.value = null ;
-}
-function challenge(){
-  tryStr = document.in_form.text.value ;
-  document.out_form.text_try.value = tryStr ;
+function addPostIt(tagId) {
+  content = document.in_form.text.value ;
+  element = document.getElementById(tagId);
+  child = document.createElement("div");
+  text = document.createTextNode(content);
+  child.appendChild(text);
+  element.appendChild(child);
   document.in_form.text.value = null ;
 }
 
@@ -36,37 +30,25 @@ function send(){
 
     <form name="in_form">
       入力＞<input type="text" name="text" value="" />
-      <input type="button" value="keep" onClick="keep()" />
-      <input type="button" value="problem" onClick="problem()" />
-      <input type="button" value="try" onClick="challenge()" />
+      <input type="button" value="keep" onClick="addPostIt('keep')" />
+      <input type="button" value="problem" onClick="addPostIt('problem')" />
+      <input type="button" value="try" onClick="addPostIt('try')" />
       <input type="button" value="send" onclick="send()" />
     </form>
-    <form name="out_form">
-      keep:<input type="text" name="text_keep" value="" /><br>
-      problem:<input type="text" name="text_problem" value="" /><br>
-      try:<input type="text" name="text_try" value="" />
-    </form>
-
-    <br>
 
     <table class="table-data">
-      <thead>
+      <tbody>
         <tr>
-          <td colspan = "3">K.P.T</td>
+          <th>Keep</th>
+          <th>Problem</th>
+          <th>Try</th>
         </tr>
-        </tdead>
-        <tbody>
-          <tr>
-            <th>Keep</th>
-            <th>Problem</th>
-            <th>Try</th>
-          </tr>
-          <tr>
-            <th>ここに</th>
-            <th>付箋を</th>
-            <th>置こう</th>
-          </tr>
-        </tbody>
+        <tr>
+          <th id="keep"></th>
+          <th id="problem"></th>
+          <th id="try"></th>
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>

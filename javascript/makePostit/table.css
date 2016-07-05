@@ -1,6 +1,7 @@
 p {color: red; line-height: 3.0;}
 table {
   border-collapse: collapse;
+  width: 100%;
 }
 .table-data th {
   text-align: center;
