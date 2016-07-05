@@ -12,19 +12,33 @@
 <!--
 function addPostIt(tagId) {
   content = document.in_form.text.value ;
-  element = document.getElementById(tagId);
-  child = document.createElement("div");
-  text = document.createTextNode(content);
-  child.appendChild(text);
-  element.appendChild(child);
+
+  var postit = { content: document.in_form.text.value, kind: tagId };
+  send( postit );
+
   document.in_form.text.value = null ;
 }
 
-var socketio = io.connect("http://localhost:8080");
-function send(){
-  sendStr = document.in_form.text.value;
-  socketio.emit("publish", { value : sendStr });
+var socket = io.connect("http://localhost:8080");
+
+socket.on("messeage", function(data){
+
+  console.log( data.postit.kind );
+
+  element = document.getElementById(data.postit.kind);
+
+  child = document.createElement("div");
+
+  text = document.createTextNode(data.postit.content);
+
+  child.appendChild(text);
+  element.appendChild(child);
+});
+
+function send( postit ){
+  socket.emit("publish", { postit });
 }
+
 -->
     </script>
 
@@ -33,7 +47,6 @@ function send(){
       <input type="button" value="keep" onClick="addPostIt('keep')" />
       <input type="button" value="problem" onClick="addPostIt('problem')" />
       <input type="button" value="try" onClick="addPostIt('try')" />
-      <input type="button" value="send" onclick="send()" />
     </form>
 
     <table class="table-data">
