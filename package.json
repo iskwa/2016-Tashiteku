@@ -1,0 +1,15 @@
+{
+  "name": "***",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engine": {
+    "node": "v4.4.6",
+    "npm": "2.15.5"
+  },
+  "dependencies": {
+    "http": "*",
+    "socket.io": "*"
+  }
+}
