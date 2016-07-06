@@ -19,7 +19,7 @@ function addPostIt(tagId) {
   document.in_form.text.value = null ;
 }
 
-var socket = io.connect("http://localhost:8080");
+var socket = io.connect("https://kept-raqs.herokuapp.com");
 
 socket.on("messeage", function(data){
 
